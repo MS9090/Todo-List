@@ -1,0 +1,235 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  overflow: hidden;
+  background: lightskyblue;
+}
+
+.container{
+  position: relative;
+  max-height: 80vmax;
+  width: 30rem;
+  padding: 4rem 3rem 3rem 3rem;
+  margin: 5rem auto auto auto;
+  background: cornflowerblue;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.task-input{
+  display: flex;
+  background: whitesmoke;
+}
+
+.task-input input{
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background: whitesmoke;
+}
+
+.task-input input::placeholder{
+  color: lightskyblue;
+}
+
+.task-input input:focus{
+  background-color: lightskyblue;
+  transition: all 0.3s ease;
+}
+
+.task-input input:focus + .add-task-button {
+  background: lightskyblue
+}
+
+.add-task-button{
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  border: none;
+  color: cornflowerblue;
+  background: whitesmoke;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-task-button:hover{
+  background: cornflowerblue;
+  color: whitesmoke;
+}
+
+.controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 1rem 0;
+}
+
+.filters span {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: whitesmoke;
+  cursor: pointer;
+
+}
+.filters span:first-child{
+  margin-left: 0;
+}
+
+.filters span.active{
+  color: skyblue;
+}
+
+.controls .clear-button{
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0.65rem;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  background: skyblue;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.clear-button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.clear-button:hover{
+  transform: scale(1.1);
+  color: whitesmoke;
+  background-color: crimson;
+}
+
+.task-box{
+  position: relative;
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* padding-bottom: 3rem; */
+  /* margin-bottom: 3rem; */
+}
+
+.task-box::-webkit-scrollbar{
+  width: 0.3rem;
+}
+
+.task-box::-webkit-scrollbar-thumb{
+  background: lightskyblue;
+}
+
+.task{
+  list-style: none;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.task:nth-child(odd) {
+  background: hsl(219, 79%, 70%);
+}
+
+.task label{
+  display: flex;
+  align-items: center;
+} 
+
+.task label p{
+  user-select: none;
+  margin-left: 1.5rem;
+  word-wrap: break-word;
+}
+.task label p.checked{
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-menu {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.task-menu button{
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+  background-color: transparent;
+  color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease
+}
+
+.edit-task-button:hover{
+  transform: scale(1.2);
+  color: green;
+  }
+
+.delete-task-button:hover{
+  transform: scale(1.2);
+  color: crimson;
+}
+
+.notification {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 24rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
+  top: -4rem;
+  color: whitesmoke;
+  transition: 0.3s top ease-in-out;
+}
+
+.notif-enter {
+  top: 1rem;
+}
+
+
+
+/* @media (max-width: 400px) {
+  body{
+    padding: 0 10px;
+  }
+  .wrapper {
+    padding: 20px 0;
+  }
+  .filters span{
+    margin: 0 5px;
+  }
+  .task-input{
+    padding: 0 20px;
+  }
+  .controls{
+    padding: 18px 20px;
+  }
+  .task-box{
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+  }
+  .task label input{
+    margin-top: 4px;
+  }
+} */
